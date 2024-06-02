@@ -1,0 +1,72 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./*.{html,js}", "./!(build|dist|.*)/**/*.{html,js}"],
+  theme: {
+    extend: {
+      colors: {
+        "gray-00": "#fff",
+        "gray-900": "#191d1f",
+        "gray-400": "#929fa5",
+        "warning-500": "#ebc80c",
+        "gray-300": "#adb7bc",
+        "gray-500": "#77878f",
+        gold: "#ffd700",
+        darkslateblue: {
+          "100": "#3f3284",
+          "200": "#261f4f",
+        },
+        "primary-500": "#fa8232",
+        "gray-700": "#475156",
+        gray1: {
+          "100": "#211c3a",
+          "200": "#191c1f",
+        },
+        "gray-50": "#f2f4f5",
+        blue: {
+          "100": "#4e10ff",
+          "200": "#0000ee",
+        },
+        mediumslateblue: "#9d7aff",
+        "gray-100": "#e4e7e9",
+        "gray-600": "#5f6c72",
+        dimgray: "#615f6e",
+        black: "#000",
+        "primary-100": "#ffe7d6",
+        "danger-500": "#ee5858",
+        "secondary-500": "#2da5f3",
+        "success-500": "#2db324",
+      },
+      spacing: {},
+      fontFamily: {
+        "label-02": "'Public Sans'",
+        "press-start-2p": "'Press Start 2P'",
+        roboto: "Roboto",
+        montserrat: "Montserrat",
+        inter: "Inter",
+      },
+      borderRadius: {
+        "10xs": "3px",
+        "41xl-4": "60.4px",
+        "10xs-4": "2.4px",
+        "81xl": "100px",
+      },
+    },
+    fontSize: {
+      sm: "0.875rem",
+      base: "1rem",
+      lg: "1.125rem",
+      "11xl-8": "1.925rem",
+      "13xl": "2rem",
+      "21xl": "2.5rem",
+      "17xl": "2.25rem",
+      "77xl": "6rem",
+      xl: "1.25rem",
+      xs: "0.75rem",
+      "5xl": "1.5rem",
+      inherit: "inherit",
+    },
+  },
+  corePlugins: {
+    preflight: false,
+  },
+};
