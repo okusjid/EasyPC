@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./product-detail.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Circular+Std:wght@500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Organetto+Ext+UltraBold:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <style>
+        .section-container {
+            padding-top: 4.5rem;
+            padding-bottom: 7.75rem;
+            color: #4a4a4a;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            height: 100vh;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            width: 150px;
+            justify-content: center;
+            background-color: #ffc107;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 1rem;
+        }
+        .section-text {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 2rem;
+        }
+        .list-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+        .list-item img {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.75rem;
+        }
+        .list-item-text {
+            flex-shrink: 0;
+            font-size: 1rem;
+            color: #212529;
+        }
+        .row, .container-fluid, .col-12, .col-sm-6, .col-md-6, .col-lg-6, .col-sm-7, .col-md-7, .col-lg-7, .col-sm-5, .col-md-5, .col-lg-5 {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .container {  
+            margin: 0 9px !important;  
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+        .navbar-light .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        .navbar-toggler {
+            border: 1px solid #97989b;
+        }
+        .navbar {
+            padding: 1.5rem 1rem !important;
+        }
+        input[name="tabset"]:hover {
+            background-color: orange !important;
+        }
+        .nav-tabs {
+            border-bottom: none; 
+        }
+        .tab6 {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        @media screen and (max-width: 767px) {
+            .tab6 {
+                flex-direction: column;
+            }
+        }
+
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+   
+            padding-top: 2%;
+            background-color: #f2f4f5; /* Background color for contrast */
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px; /* Optional max-width for larger screens */
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Increased shadow for better visibility */
+            padding: 20px;
+            margin: 20px; /* Margin for spacing on smaller screens */
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            margin: 10px;
+        }
+        
+        .feature img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 1em;
+            margin: 0;
+            font-weight: normal;
+        }
+        
+        .feature p {
+            font-size: 0.9em;
+            color: gray;
+            margin: 0;
+        }
+        
+        .text-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .feature {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .text-container {
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+
+
+        .custom-center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .custom-card {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            gap: 20px;
+        }
+        
+        .image-icon20 {
+            width: 200px;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .custom-card-content {
+            color: #000;
+            margin-left: 20px;
+            width: 350px;
+        }
+        
+        .custom-card-content h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .custom-card-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .custom-card-content ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .custom-card-content ul li img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        
+        .custom-card-content button {
+            background-color: #ffd700;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 200px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .custom-card {
+                flex-direction: column;
+                width: 100%;
+                padding: 10px;
+            }
+        
+            .custom-card-content {
+                margin-left: 0;
+                text-align: center;
+            }
+        
+            .custom-card-content h1 {
+                font-size: 20px;
+            }
+        
+            .custom-card-content ul li {
+                justify-content: center;
+            }
+        
+            .custom-card-content button {
+                width: 100%;
+            }
+        
+            .image-icon20 {
+                width: 150px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .custom-card-content h1 {
+                font-size: 18px;
+            }
+        
+            .image-icon20 {
+                width: 100px;
+            }
+        }
+        
+    
+
+
+
+
+
+   
+        .responsive-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .vendors-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .vendors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 800px; /* You can adjust the max-width as needed */
+            text-align: center;
+            justify-content: center;
+        }
+        
+        .vendor-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .vendor-list li {
+            margin-bottom: 10px;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .pagination button {
+            background-color: #ff5722;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .pagination span {
+            font-size: 1em;
+        }
+        
+
+
+
+
+
+
+        .custom-latest-news {
+            background-color: #f2f4f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 72px 20px;
+            gap: 40px;
+            text-align: left;
+            font-size: 14px;
+        }
+        
+        .custom-forums-title {
+            width: 100%;
+            max-width: 1320px;
+            text-align: center;
+            font-size: 32px;
+            line-height: 40px;
+            font-weight: 600;
+        }
+        
+        .custom-button {
+            border-radius: 2px;
+            background-color: #ffd700;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 24px;
+            gap: 8px;
+        }
+        
+        .custom-button-label {
+            line-height: 48px;
+            text-transform: uppercase;
+        }
+        
+        .custom-arrow-icon {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .custom-row {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 24px;
+            color: #475156;
+            flex-wrap: wrap;
+        }
+        
+        .custom-blog {
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.04);
+            border-radius: 4px;
+            background-color: #fff;
+            border: 1px solid #e4e7e9;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 32px;
+            gap: 24px;
+            max-width: 100%;
+            width: 360px;
+        }
+        
+        .custom-blog-image {
+            width: 100%;
+            height: 248px;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+        
+        .custom-blog-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 12px;
+        }
+        
+        .custom-blog-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 8px;
+        }
+        
+        .custom-blog-info {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .custom-user-info,
+        .custom-date-info,
+        .custom-comments-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        
+        .custom-icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .custom-text {
+            line-height: 20px;
+        }
+        
+        .custom-blog-title {
+            width: 100%;
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 500;
+            color: #191d1f;
+        }
+        
+        .custom-description {
+            width: 100%;
+            font-size: 16px;
+            line-height: 24px;
+            color: #77878f;
+        }
+        
+        .custom-read-more {
+            border-radius: 2px;
+            border: 2px solid #ffe7d6;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 24px;
+            gap: 8px;
+            color: #fa8232;
+        }
+        
+        .custom-read-more-label {
+            line-height: 48px;
+            text-transform: uppercase;
+        }
+        
+        @media screen and (max-width: 767px) {
+            .custom-row {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 24px;
+                color: #475156;
+            }
+        
+            .custom-blog-info {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 16px;
+            }
+        }
+        
+
+        .featured-products-container {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom:10px;
+            padding-left:  100px ;
+            padding-right: 100px; /* Reduced padding for better responsiveness */
+            background-color: #f9f9f9;
+        }
+        
+        .featured-products-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .featured-products-grid-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .featured-products-grid {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px; /* Adjust size */
+            min-width: 200px;
+            margin: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 150px; /* Smaller height */
+            object-fit: contain; /* Ensure the whole image fits within the specified dimensions */
+        }
+        
+        .product-details {
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .product-rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .stars {
+            color: #ffd700;
+            margin-right: 5px;
+        }
+        
+        .rating {
+            color: #888;
+        }
+        
+        .product-name {
+            font-size: 12px; /* Reduced font size */
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .product-price {
+            color: #2da5f3;
+            font-size: 14px; /* Reduced font size */
+            font-weight: bold;
+        }
+        
+        /* Arrow buttons */
+        .arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) !important;
+            background-color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .left-arrow {
+            left: 0;
+        }
+        
+        .right-arrow {
+            right: 0;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .featured-products-container {
+                padding: 100px 50px; /* Adjusted padding for medium screens */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .featured-products-container {
+                padding: 100px 20px; /* Adjusted padding for small screens */
+            }
+        
+            .product-card {
+                width: calc(50% - 20px); /* Adjust width for small screens */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .product-card {
+                width: calc(100% - 20px); /* Adjust width for extra small screens */
+            }
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+    <div class="product-detail">
+        <div class="container-fluid">
+            <div class="top-nav2 row">
+                <div class="col-sm-6" style="padding-left: 20px !important;">
+
+                    Pick Parts. Build Your PC. Compare and Share.
+                </div>
+                <div class="left-content2 col-sm-6">
+                    <div class="share-product">
+                        <div class="home">Follow us:</div>
+                        <div class="social-icon2">
+                            <a href="#"><img class="twitter-icon2" alt="" src="./public/twitter.svg"></a>
+                            <a href="#"><img class="twitter-icon2" alt="" src="./public/facebook.svg"></a>
+                            <a href="#"><img class="twitter-icon2" alt="" src="./public/pinterest.svg"></a>
+                            <a href="#"><img class="twitter-icon2" alt="" src="./public/reddit.svg"></a>
+                            <a href="#"><img class="twitter-icon2" alt="" src="./public/youtube.svg"></a>
+                            <a href="#"><img class="twitter-icon2" alt="" src="./public/instagram.svg"></a>
+                        </div>
+                    </div>
+                    <div class="left-content-inner"></div>
+                    <div class="multi-languagedrodpwon1">
+                        <div class="dropdown1">
+                            <div class="home">Eng</div>
+                            <img class="regularcaretdown-icon3" alt="" src="./public/regularcaretdown1.svg">
+                        </div>
+                    </div>
+                    <div class="call-now2">
+                        <img class="regularphonecall-icon2" alt="" src="./public/regularphonecall.svg">
+                        <div class="div52" style="margin-right: 20px !important;">+92-336-555-0104</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg logo-container" >
+                <div class="logo7">
+                    <div class="image-7-container" style="padding-left: 60px !important; ">
+                        <img class="image-7-icon5" alt="" src="./public/image-7@2x.png">
+                        <div class="easypc5" >
+                            <span>Easy</span>
+                            <span class="pc5">PC</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="navbar-toggler" type="button" style="background-color: rgb(65, 65, 197);" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span role="button"><i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i></span>
+                </button>
+                <div class="collapse navbar-collapse left-side2" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="track-order2">
+                                    <img class="image-10-icon2" alt="" src="./public/image-10@2x.png">
+                                    <div class="ups-ground-shipping">Builder</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="track-order2">
+                                    <img class="image-10-icon2" alt="" src="./public/image-11@2x.png">
+                                    <div class="ups-ground-shipping">Vendor</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="track-order2">
+                                    <img class="regularheadphones-icon2" alt="" src="./public/regularheadphones.svg">
+                                    <div class="ups-ground-shipping">New Parts</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="track-order2">
+                                    <img class="image-10-icon2" alt="" src="./public/image-12@2x.png">
+                                    <div class="ups-ground-shipping">Used Parts</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="track-order2">
+                                    <img class="image-10-icon2" alt="" src="./public/image-12@2x.png">
+                                    <div class="ups-ground-shipping">Forums</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="track-order2">
+                                    <img class="image-10-icon2" alt="" src="./public/image-12@2x.png">
+                                    <div class="ups-ground-shipping">About Us</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul> 
+                </div> 
+            </nav>
+
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 300px; background-color: #2a2a72; padding: 20px; box-sizing: border-box;">
+                <h1 style="color: white; text-align: center; margin-bottom: 20px; font-size: 24px;" class="responsive-title">Build your own pc parts by part</h1>
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px; width: 100%; max-width: 800px;" class="responsive-category-parent">
+                    <div style="flex: 1;">
+                        <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                            <div style="font-size: 16px; color: #333;">All Category</div>
+                            <img alt="" src="./public/regularcaretdown.svg" style="width: 16px; height: 16px;">
+                        </div>
+                    </div>
+                    <div style="display: flex; flex: 3; flex-direction: row; align-items: center; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-left: 10px;">
+                        <input type="text" placeholder="Search for anything..." style="flex: 1; border: none; outline: none; font-size: 16px; color: #333;">
+                        <img alt="" src="./public/regularmagnifyingglass.svg" style="width: 16px; height: 16px;">
+                    </div>
+                </div>
+            </div>
+            
+           
+
+
+
+            <!-- Main Section -->
+  
+           
+
+              <!-- feature -->
+              <div class="center-container" >
+                <div class="container">
+                    <div class="feature">
+                        <img class="duotonepackage-icon" alt="" src="./public/duotonepackage.svg">
+                        <div class="text-container">
+                            <h3 style="color: #000;">ONLY THE BEST PARTS</h3>
+                            <p>Get the latest prices</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <img class="duotonepackage-icon" alt="" src="./public/duotonetrophy.svg">
+                        <div class="text-container">
+                            <h3 style="color: #000;">INDUSTRY TRUSTED</h3>
+                            <p>Verified Retailers</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <img class="duotonepackage-icon" alt="" src="./public/duotonecreditcard.svg">
+                        <div class="text-container">
+                            <h3 style="color: #000;">PRODUCT REVIEWS</h3>
+                            <p>Review and connect with a community of PC lovers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+              <!-- img -->
+              <div class="custom-center-container" style="display: flex; background-color:#f5f5f5;">
+                <div class="custom-card">
+                    <img class="image-icon20" alt="" src="./public/image17@2x.png">
+                    <div class="custom-card-content">
+                        <h1>Begin Your PC Building Journey here and Get The Best Price</h1>
+                        <ul>
+                            <li><img src="./public/image-13@2x.png" alt="Check Icon"> Find the best prices for components</li>
+                            <li><img src="./public/image-13@2x.png" alt="Check Icon"> Choose from our list of verified official shops and sellers</li>
+                            <li><img src="./public/image-13@2x.png" alt="Check Icon"> Build, get a quote, share, and discuss with PC lovers across Pakistan.</li>
+                        </ul>
+                        <button>START YOUR BUILD →</button>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <!-- products -->
+
+            <div class="featured-products-container">
+                <h2 class="featured-products-title" style="color: #000;">Featured Products</h2>
+                <div class="featured-products-grid-wrapper">
+                    <button class="arrow-btn left-arrow" onclick="scrollLeft()">&#8592;</button>
+                    <div class="featured-products-grid">
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating">(994)</span>
+                                </div>
+                                <div class="product-name">Amazon Basics High-Speed HDMI Cable (18 Gbps, 4K/6...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+                        
+
+                       
+
+
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+
+
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="arrow-btn right-arrow" onclick="scrollRight()">&#8594;</button>
+                </div>
+            </div>
+            
+            <!-- categories -->
+            
+            
+            <div class="featured-products-container">
+                <h2 class="featured-products-title" style="color: #000;">Categories</h2>
+                <div class="featured-products-grid-wrapper">
+                    <button class="arrow-btn left-arrow" onclick="scrollLeft()">&#8592;</button>
+                    <div class="featured-products-grid">
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating">(994)</span>
+                                </div>
+                                <div class="product-name">Amazon Basics High-Speed HDMI Cable (18 Gbps, 4K/6...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+                        
+
+
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+                       
+
+
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+
+
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="arrow-btn right-arrow" onclick="scrollRight()">&#8594;</button>
+                </div>
+            </div>
+            
+
+            <!-- hottest prodecuts -->
+
+            <div class="featured-products-container">
+                <h2 class="hottest-products-title" style="color: #000; ">Hottest Products</h2>
+                <div class="featured-products-grid-wrapper">
+                    
+                    <div class="featured-products-grid">
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating">(994)</span>
+                                </div>
+                                <div class="product-name">Amazon Basics High-Speed HDMI Cable (18 Gbps, 4K/6...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+                       
+
+
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+
+
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="product-card">
+                            <img class="image-icon" alt="" src="./public/image@2x.png">
+                            <div class="product-details">
+                                <div class="product-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating">(798)</span>
+                                </div>
+                                <div class="product-name">Portable Washing Machine, 11lbs capacity Model 18NMF...</div>
+                                <div class="product-price">PKR 10,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+
+<!-- 
+vendor -->
+<div class="responsive-container">
+    <h1 class="vendors-title" style="color: #000;">Vendors</h1>
+    <div class="vendors-grid">
+        <ul class="vendor-list">
+            <li><a href="#">Amazon</a></li>
+            <li><a href="#">Adobe</a></li>
+            <li><a href="#">Apple</a></li>
+            <li><a href="#">Alibaba</a></li>
+            <li><a href="#">Boeing</a></li>
+            <li><a href="#">Broadcom</a></li>
+            <li><a href="#">BlackRock</a></li>
+        </ul>
+        <ul class="vendor-list">
+            <li><a href="#">Amazon</a></li>
+            <li><a href="#">Adobe</a></li>
+            <li><a href="#">Apple</a></li>
+            <li><a href="#">Alibaba</a></li>
+            <li><a href="#">Boeing</a></li>
+            <li><a href="#">Broadcom</a></li>
+            <li><a href="#">BlackRock</a></li>
+        </ul>
+        <ul class="vendor-list">
+            <li><a href="#">Amazon</a></li>
+            <li><a href="#">Adobe</a></li>
+            <li><a href="#">Apple</a></li>
+            <li><a href="#">Alibaba</a></li>
+            <li><a href="#">Boeing</a></li>
+            <li><a href="#">Broadcom</a></li>
+            <li><a href="#">BlackRock</a></li>
+        </ul>
+        <ul class="vendor-list">
+            <li><a href="#">Amazon</a></li>
+            <li><a href="#">Adobe</a></li>
+            <li><a href="#">Apple</a></li>
+            <li><a href="#">Alibaba</a></li>
+            <li><a href="#">Boeing</a></li>
+            <li><a href="#">Broadcom</a></li>
+            <li><a href="#">BlackRock</a></li>
+        </ul>
+    </div>
+    <div class="pagination" style="color: #000;">
+        <button>&larr;</button>
+        <span>A ... H</span>
+        <button>&rarr;</button>
+    </div>
+</div>
+
+
+<!-- forums -->
+<div class="custom-latest-news">
+    <div class="custom-forums-title" style="color: #000;">Forums</div>
+    <div class="custom-button">
+        <b class="custom-button-label">View All posts</b>
+        <img class="custom-arrow-icon" alt="" src="./public/regulararrowright2.svg" />
+    </div>
+    <div class="custom-row">
+        <div class="custom-blog">
+            <img class="custom-blog-image" alt="" src="./public/unsplashizvrfelg1t0@2x.png" />
+            <div class="custom-blog-content">
+                <div class="custom-blog-details">
+                    <div class="custom-blog-info">
+                        <div class="custom-user-info">
+                            <img class="custom-icon" alt="" src="./public/regularmappinline.svg" />
+                            <div class="custom-text">Hafeez Centre, Lahore</div>
+                        </div>
+                        <div class="custom-date-info">
+                            <img class="custom-icon" alt="" src="./public/regularcalendarblank.svg" />
+                            <div class="custom-text">19 Dec, 2013</div>
+                        </div>
+                        <div class="custom-comments-info">
+                            <img class="custom-icon" alt="" src="./public/regularchatcircledots.svg" />
+                            <div class="custom-text">453</div>
+                        </div>
+                    </div>
+                    <div class="custom-blog-title">New Star Computers and Accessories</div>
+                </div>
+                <div class="custom-description">
+                    Maecenas scelerisque, arcu quis tempus egestas, ligula diam molestie lectus, tincidunt malesuada arcu metus posuere metus.
+                </div>
+            </div>
+            <div class="custom-read-more">
+                <b class="custom-read-more-label">Read more</b>
+                <img class="custom-arrow-icon" alt="" src="./public/regulararrowright1.svg" />
+            </div>
+        </div>
+        <div class="custom-blog">
+            <img class="custom-blog-image" alt="" src="./public/unsplashfo7jilwjotu@2x.png" />
+            <div class="custom-blog-content">
+                <div class="custom-blog-details">
+                    <div class="custom-blog-info">
+                        <div class="custom-user-info">
+                            <img class="custom-icon" alt="" src="./public/regularusercircle.svg" />
+                            <div class="custom-text">Robert</div>
+                        </div>
+                        <div class="custom-date-info">
+                            <img class="custom-icon" alt="" src="./public/regularcalendarblank.svg" />
+                            <div class="custom-text">28 Nov, 2015</div>
+                        </div>
+                        <div class="custom-comments-info">
+                            <img class="custom-icon" alt="" src="./public/regularchatcircledots.svg" />
+                            <div class="custom-text">738</div>
+                        </div>
+                    </div>
+                    <div class="custom-blog-title">Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.</div>
+                </div>
+                <div class="custom-description">
+                    Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae, hendrerit blandit lorem.
+                </div>
+            </div>
+            <div class="custom-read-more">
+                <b class="custom-read-more-label">Read more</b>
+                <img class="custom-arrow-icon" alt="" src="./public/regulararrowright1.svg" />
+            </div>
+        </div>
+        <div class="custom-blog">
+            <img class="custom-blog-image" alt="" src="./public/unsplash6mnmdi1hc-y@2x.png" />
+            <div class="custom-blog-content">
+                <div class="custom-blog-details">
+                    <div class="custom-blog-info">
+                        <div class="custom-user-info">
+                            <img class="custom-icon" alt="" src="./public/regularusercircle.svg" />
+                            <div class="custom-text">Arlene</div>
+                        </div>
+                        <div class="custom-date-info">
+                            <img class="custom-icon" alt="" src="./public/regularcalendarblank.svg" />
+                            <div class="custom-text">9 May, 2014</div>
+                        </div>
+                        <div class="custom-comments-info">
+                            <img class="custom-icon" alt="" src="./public/regularchatcircledots.svg" />
+                            <div class="custom-text">826</div>
+                        </div>
+                    </div>
+                    <div class="custom-blog-title">Curabitur massa orci, consectetur et blandit ac, auctor et tellus.</div>
+                </div>
+                <div class="custom-description">
+                    Pellentesque vestibulum lorem vel gravida aliquam. Morbi porta, odio id suscipit mattis, risus augue condimentum purus.
+                </div>
+            </div>
+            <div class="custom-read-more">
+                <b class="custom-read-more-label">Read more</b>
+                <img class="custom-arrow-icon" alt="" src="./public/regulararrowright1.svg" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- newsletter -->
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: auto; background-color: #2a2a72; padding: 40px 20px; box-sizing: border-box;">
+    <h2 style="color: white; text-align: center; font-size: 24px; margin-bottom: 10px;">Subscribe to our newsletter</h2>
+    <p style="color: #b0b0b0; text-align: center; max-width: 600px; margin-bottom: 20px;">
+        Praesent fringilla erat a lacinia egestas. Donec vehicula tempor libero et cursus. Donec non quam urna. Quisque vitae porta ipsum.
+    </p>
+    <div style="display: flex; justify-content: center; align-items: center; max-width: 500px; width: 100%; margin-bottom: 20px;">
+        <input type="email" placeholder="Email address" style="flex: 1; padding: 15px; border: none; border-radius: 4px 0 0 4px; outline: none; font-size: 16px;">
+        <button style="background-color: #ff7f32; color: white; border: none; padding: 15px 20px; border-radius: 0 4px 4px 0; cursor: pointer; font-size: 16px;">
+            SUBSCRIBE →
+        </button>
+    </div>
+    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+        <img class="google-2015-1-icon" alt="" src="./public/google2015-1.svg">
+        <img class="google-2015-1-icon" alt="" src="./public/frame.svg">
+        <img class="google-2015-1-icon" alt="" src="./public/philips-1.svg">
+        <img class="google-2015-1-icon" alt="" src="./public/toshiba1-1.svg">
+        <img class="google-2015-1-icon" alt="" src="./public/samsung4-1.svg">
+    </div>
+</div>
+
+
+
+
+
+            <!-- Footer -->
+            <div class="footer4" >
+                <div class="footer5" >
+                    <div class="clicon-ecommerce2" style="margin-left: 20px !important;">
+                        <div class="logo8">
+                            <img class="image-7-icon6" alt="" src="./public/image-74@2x.png">
+                            <div class="easypc6">
+                                <span>Easy</span>
+                                <span class="pc5">PC</span>
+                            </div>
+                        </div>
+                        <div class="contact-info2">
+                            <div class="phone-number2">
+                                <div class="display">Customer Supports:</div>
+                                <div class="div73">(629) 555-0129</div>
+                            </div>
+                            <div class="washington-ave-manchester2">
+                                4517 Washington Ave. Manchester, Kentucky 39495
+                            </div>
+                            <div class="infokinbocom2">info@kinbo.com</div>
+                        </div>
+                    </div>
+                    <div class="top-category4" >
+                        <div class="top-category5">Top Category</div>
+                        <div class="item4">
+                            <a href="#" class="footer-links14" style="color:white !important;">
+                                <div class="ups-ground-shipping">Computer & Laptop</div>
+                            </a>
+                            <a href="#" class="footer-links14" style="color:white !important;">
+                                <div class="ups-ground-shipping">CPUs</div>
+                            </a>
+                            <a href="#" class="footer-links14" style="color:white !important;">
+                                <div class="ups-ground-shipping">Headphone</div>
+                            </a>
+                            <a href="#" class="footer-links17" style="color:white !important;">
+                                <div class="devider3"></div>
+                                <div class="ups-ground-shipping">Accessories</div>
+                            </a>
+                            <a href="#" class="footer-links14" style="color:white !important;">
+                                <div class="ups-ground-shipping">Memory</div>
+                            </a>
+                            <a href="#" class="footer-links14" style="color:white !important;">
+                                <div class="ups-ground-shipping">Displays</div>
+                            </a>
+                            <a href="#" class="button15" style="color:white !important;">
+                                <div class="ups-ground-shipping">Browse All Vendor</div>
+                                <img class="regularhouse-icon" alt="" src="./public/regulararrowright4.svg">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="top-category4">
+                        <div class="top-category5">Quick links</div>
+                        <div class="item4">
+                            <a href="#" class="footer-links14" style="color:white !important;">
+                                <div class="ups-ground-shipping" style="color:white !important;" >About Us</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright2">
+                    <div class="ups-ground-shipping">Designed by Advantech</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

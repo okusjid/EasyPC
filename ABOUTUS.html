@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./product-detail.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Circular+Std:wght@500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Organetto+Ext+UltraBold:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .section-container {
+            padding-top: 4.5rem;
+            padding-bottom: 7.75rem;
+            color: #4a4a4a;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            height: 100vh;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            width: 150px;
+            justify-content: center;
+            background-color: #ffc107;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 1rem;
+        }
+        .section-text {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 2rem;
+        }
+        .list-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+        .list-item img {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.75rem;
+        }
+        .list-item-text {
+            flex-shrink: 0;
+            font-size: 1rem;
+            color: #212529;
+        }
+        .row, .container-fluid, .col-12, .col-sm-6, .col-md-6, .col-lg-6, .col-sm-7, .col-md-7, .col-lg-7, .col-sm-5, .col-md-5, .col-lg-5 {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .container {  
+            margin: 0 9px !important;  
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+        .navbar-light .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        .navbar-toggler {
+            border: 1px solid #97989b;
+        }
+        .navbar {
+            padding: 1.5rem 1rem !important;
+        }
+        input[name="tabset"]:hover {
+            background-color: orange !important;
+        }
+        .nav-tabs {
+            border-bottom: none; 
+        }
+        .tab6 {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        @media screen and (max-width: 767px) {
+            .tab6 {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="product-detail">
+        <div class="container-fluid">
+            <div class="top-nav2 row">
+                <div class="col-sm-6" style="padding-left: 20px !important;">
+
+                    Pick Parts. Build Your PC. Compare and Share.
+                </div>
+                <div class="left-content2 col-sm-6">
+                    <div class="share-product">
+                        <div class="home">Follow us:</div>
+                        <div class="social-icon2">
+                            <a href="#"><img class="twitter-icon2" alt="" src="./public/twitter.svg"></a>
+                            <a href="#"><img class="twitter-icon2" alt="" src="./public/facebook.svg"></a>
+                            <a href="#"><img class="twitter-icon2" alt="" src="./public/pinterest.svg"></a>
+                            <a href="#"><img class="twitter-icon2" alt="" src="./public/reddit.svg"></a>
+                            <a href="#"><img class="twitter-icon2" alt="" src="./public/youtube.svg"></a>
+                            <a href="#"><img class="twitter-icon2" alt="" src="./public/instagram.svg"></a>
+                        </div>
+                    </div>
+                    <div class="left-content-inner"></div>
+                    <div class="multi-languagedrodpwon1">
+                        <div class="dropdown1">
+                            <div class="home">Eng</div>
+                            <img class="regularcaretdown-icon3" alt="" src="./public/regularcaretdown1.svg">
+                        </div>
+                    </div>
+                    <div class="call-now2">
+                        <img class="regularphonecall-icon2" alt="" src="./public/regularphonecall.svg">
+                        <div class="div52" style="margin-right: 20px !important;">+92-336-555-0104</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg logo-container">
+                <div class="logo7">
+                    <div class="image-7-container">
+                        <img class="image-7-icon5" alt="" src="./public/image-7@2x.png">
+                        <div class="easypc5">
+                            <span>Easy</span>
+                            <span class="pc5">PC</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="navbar-toggler" type="button" style="background-color: rgb(65, 65, 197);" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span role="button"><i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i></span>
+                </button>
+                <div class="collapse navbar-collapse left-side2" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="track-order2">
+                                    <img class="image-10-icon2" alt="" src="./public/image-10@2x.png">
+                                    <div class="ups-ground-shipping">Builder</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="track-order2">
+                                    <img class="image-10-icon2" alt="" src="./public/image-11@2x.png">
+                                    <div class="ups-ground-shipping">Vendor</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="track-order2">
+                                    <img class="regularheadphones-icon2" alt="" src="./public/regularheadphones.svg">
+                                    <div class="ups-ground-shipping">New Parts</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="track-order2">
+                                    <img class="image-10-icon2" alt="" src="./public/image-12@2x.png">
+                                    <div class="ups-ground-shipping">Used Parts</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="track-order2">
+                                    <img class="image-10-icon2" alt="" src="./public/image-12@2x.png">
+                                    <div class="ups-ground-shipping">Forums</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="track-order2">
+                                    <img class="image-10-icon2" alt="" src="./public/image-12@2x.png">
+                                    <div class="ups-ground-shipping">About Us</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul> 
+                </div> 
+            </nav>
+
+            <!-- Main Section -->
+            <div class="container section-container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-lg-8 text-center">
+                        <div class="section-header">
+                            <div class="font-weight-bold">WHO WE ARE</div>
+                        </div>
+                        <div class="section-title">
+                            EasyPC - largest PC retailer in Pakistan
+                        </div>
+                        <div class="section-text">
+                            Pellentesque ultrices, dui vel hendrerit iaculis, ipsum velit vestibulum risus, ac tincidunt diam lectus id magna. Praesent maximus lobortis neque sit amet rhoncus. Nullam tempus lectus a dui aliquet, non ultricies nibh elementum. Nulla ac nulla dolor.
+                        </div>
+                        <div class="text-left">
+                            <div class="list-item">
+                                <img src="/public/duotonechecks.svg" alt="">
+                                <div class="list-item-text">Great 24/7 customer service</div>
+                            </div>
+                            <div class="list-item">
+                                <img src="/public/duotonechecks.svg" alt="">
+                                <div class="list-item-text">100+ Partnered Stores.</div>
+                            </div>
+                            <div class="list-item">
+                                <img src="/public/duotonechecks.svg" alt="">
+                                <div class="list-item-text">Loren Ipsum</div>
+                            </div>
+                            <div class="list-item">
+                                <img src="/public/duotonechecks.svg" alt="">
+                                <div class="list-item-text">Lorem Ipsum</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer4" >
+                <div class="footer5" >
+                    <div class="clicon-ecommerce2" style="margin-left: 20px !important;">
+                        <div class="logo8">
+                            <img class="image-7-icon6" alt="" src="./public/image-74@2x.png">
+                            <div class="easypc6">
+                                <span>Easy</span>
+                                <span class="pc5">PC</span>
+                            </div>
+                        </div>
+                        <div class="contact-info2">
+                            <div class="phone-number2">
+                                <div class="display">Customer Supports:</div>
+                                <div class="div73">(629) 555-0129</div>
+                            </div>
+                            <div class="washington-ave-manchester2">
+                                4517 Washington Ave. Manchester, Kentucky 39495
+                            </div>
+                            <div class="infokinbocom2">info@kinbo.com</div>
+                        </div>
+                    </div>
+                    <div class="top-category4" >
+                        <div class="top-category5">Top Category</div>
+                        <div class="item4">
+                            <a href="#" class="footer-links14" style="color:white !important;">
+                                <div class="ups-ground-shipping">Computer & Laptop</div>
+                            </a>
+                            <a href="#" class="footer-links14" style="color:white !important;">
+                                <div class="ups-ground-shipping">CPUs</div>
+                            </a>
+                            <a href="#" class="footer-links14" style="color:white !important;">
+                                <div class="ups-ground-shipping">Headphone</div>
+                            </a>
+                            <a href="#" class="footer-links17" style="color:white !important;">
+                                <div class="devider3"></div>
+                                <div class="ups-ground-shipping">Accessories</div>
+                            </a>
+                            <a href="#" class="footer-links14" style="color:white !important;">
+                                <div class="ups-ground-shipping">Memory</div>
+                            </a>
+                            <a href="#" class="footer-links14" style="color:white !important;">
+                                <div class="ups-ground-shipping">Displays</div>
+                            </a>
+                            <a href="#" class="button15" style="color:white !important;">
+                                <div class="ups-ground-shipping">Browse All Vendor</div>
+                                <img class="regularhouse-icon" alt="" src="./public/regulararrowright4.svg">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="top-category4">
+                        <div class="top-category5">Quick links</div>
+                        <div class="item4">
+                            <a href="#" class="footer-links14" style="color:white !important;">
+                                <div class="ups-ground-shipping" style="color:white !important;" >About Us</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright2">
+                    <div class="ups-ground-shipping">Designed by Advantech</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
